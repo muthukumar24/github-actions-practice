@@ -1,0 +1,16 @@
+# Workflow Name
+name: CI Pipeline
+
+# on - Defines when the workflow should be triggered
+on: workflow_dispatch
+
+# jobs - Defines the tasks the workflow will perform
+jobs:
+  # build - Name of the job 
+  build:
+    # runs-on - Specifies the OS for GitHub actions runner
+    runs-on: ubuntu-latest
+    # steps - Contains the individual steps of the job
+    steps:
+      # run - Executes shell command on the runner
+      - run: echo "Building Application"
