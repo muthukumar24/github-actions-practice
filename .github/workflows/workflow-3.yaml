@@ -2,12 +2,11 @@ name: CI Pipeline
 on: 
   workflow_dispatch:
 jobs:
-  build:
+  job1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Building application"
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Deploying application"
+      - name: Build
+        run: echo "Build Successful"
+      - name: Test
+        if: ${{ success() }}
+        run: echo "Testing Application"
