@@ -5,6 +5,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: GitHub - Vars
-        run: |
-          echo "Environment - ${{ vars.APP_ENVIRONMENT }}"
+      - run: echo "Building application"
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying application"
