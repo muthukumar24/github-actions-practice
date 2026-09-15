@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: GitHub - Secrets
         run: |
-          echo "GitHub masks it - $API_KEY"
+          echo "GitHub masks the secret if i try to print - $API_KEY"
