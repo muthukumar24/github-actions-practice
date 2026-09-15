@@ -2,11 +2,11 @@ name: CI Pipeline
 on: 
   workflow_dispatch:
 env:
-  API_KEY: ${{ secrets.API_TOKEN }}
+  APPLICATION_ENVIRONMENT: ${{ vars.APP_ENVIRONEMT }}
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: GitHub - Secrets
+      - name: GitHub - Vars
         run: |
-          echo "GitHub masks the secret if i try to print - $API_KEY"
+          echo "Environment - $APPLICATION_ENVIRONMENT"
