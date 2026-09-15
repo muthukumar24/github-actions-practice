@@ -1,12 +1,10 @@
 name: CI Pipeline
 on: 
   workflow_dispatch:
-env:
-  APPLICATION_ENVIRONMENT: ${{ vars.APP_ENVIRONEMT }}
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: GitHub - Vars
         run: |
-          echo "Environment - $APPLICATION_ENVIRONMENT"
+          echo "Environment - ${{ vars.APP_ENVIRONMENT }}"
