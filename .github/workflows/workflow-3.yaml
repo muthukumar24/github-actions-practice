@@ -5,8 +5,8 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
-        run: echo "Build Successful"
       - name: Test
-        if: ${{ success() }}
-        run: echo "Testing Application"
+        run: exit 1
+      - name: Show Error
+        if: ${{ failure() }}
+        run: echo "Tests failed"
