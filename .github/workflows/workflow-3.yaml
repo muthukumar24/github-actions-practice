@@ -5,8 +5,8 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Test
-        run: exit 1
-      - name: Show Error
-        if: ${{ failure() }}
-        run: echo "Tests failed"
+    - name: Test
+      run: echo "Running tests"
+    - name: Cleanup
+      if: ${{ always() }}
+      run: echo "Cleaning temporary files"
