@@ -2,9 +2,11 @@ name: CI Pipeline
 on: 
   workflow_dispatch:
 env:
-  APP_NAME: GitHub Application
+  API_KEY: ${{ secrets.API_TOKEN }}
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Application - ${{ env.APP_NAME }}"
+      - name: GitHub - Secrets
+        run: |
+          echo "GitHub masks it - $API_KEY"
