@@ -1,11 +1,10 @@
 name: CI Pipeline
 on: 
   workflow_dispatch:
+env:
+  APP_NAME: GitHub Application
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Runner context values
-        run: |
-          echo "Runner OS   : ${{ runner.os }}"
-          echo "Runner arch : ${{ runner.arch }}"
+      - run: echo "Application - ${{ env.APP_NAME }}"
