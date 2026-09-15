@@ -1,0 +1,33 @@
+# Name of the GitHub Actions workflow
+name: CI Pipeline
+# Defines when the workflow should run
+on:
+  # Run the workflow whenever code is pushed
+  push:
+    # Run only when code is pushed to the main branch
+    branches:
+      - main
+  # Allows the workflow to be started manually from GitHub
+  workflow_dispatch:
+# Defines the jobs that will run in this workflow
+jobs:
+  # Name of the first job
+  build:
+    # Specifies the operating system for the runner
+    runs-on: ubuntu-latest
+    # Defines the steps that will be executed in this job
+    steps:
+      # Executes a shell command to simulate building the application
+      - run: echo "Build application"
+      # Executes a shell command to simulate installing dependencies
+      - run: echo "Install dependencies"
+      # Executes a shell command to simulate running tests
+      - run: echo "Run tests"
+  # Name of the second job
+  build2:
+    # Specifies the operating system for the runner
+    runs-on: ubuntu-latest
+    # Defines the steps that will be executed in this job
+    steps:
+      # Checks out/downloads the repository code into the runner
+      - uses: actions/checkout@v4
