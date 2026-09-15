@@ -2,11 +2,11 @@ name: CI Pipeline
 on: 
   workflow_dispatch:
 jobs:
-  job1:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Test
-      run: echo "Running tests"
-    - name: Cleanup
-      if: ${{ always() }}
-      run: echo "Cleaning temporary files"
+      - name: Deploy Application
+        run: echo "Deploying Application"
+      - name: Cleanup After Cancellation
+        if: ${{ cancelled() }}
+        run: echo "Deployment was cancelled. Cleaning up..."
