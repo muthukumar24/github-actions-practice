@@ -2,7 +2,7 @@ name: CI Pipeline
 on: 
   workflow_dispatch:
 env:
-  ENVIRONMENT: prodcution
+  ENVIRONMENT: production
 jobs:
   Deploy:
     runs-on: ubuntu-latest
