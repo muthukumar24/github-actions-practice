@@ -3,7 +3,8 @@ on:
   workflow_dispatch:
 jobs:
   Build:
-    if: ! (github.event_name == 'push')
+    # if: ! (github.event_name == 'push')
+    if: ! ('pull' == 'push')
     runs-on: ubuntu-latest
     steps:
       - run: echo "Application Build Completed"
