@@ -1,12 +1,10 @@
 name: CI Pipeline
 on: 
   workflow_dispatch:
-env:
-  ENVIRONMENT: production
 jobs:
   Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Deployment
-        if: ${{ env.ENVIRONMENT == 'production' && github.event_name == 'workflow_dispatch' }}
+        if: ${{ success() && github.event_name == 'workflow_dispatch' }}
         run: echo "Deploying to Production"
