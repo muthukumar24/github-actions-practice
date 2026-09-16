@@ -4,9 +4,9 @@ on:
 env:
   ENVIRONMENT: prodcution
 jobs:
-  Build:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Deployment
-        if: env.ENVIRONMENT == 'production'
+        if: ${{ env.ENVIRONMENT == 'production' }}
         run: echo "Deploying to Production"
