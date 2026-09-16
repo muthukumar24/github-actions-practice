@@ -1,9 +1,12 @@
 name: CI Pipeline
 on: 
   workflow_dispatch:
+env:
+  ENVIRONMENT: prodcution
 jobs:
   Build:
-    if: ${{ ! (github.event_name == 'push') }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Application Build Completed"
+      - name: Deployment
+        if: env.ENVIRONMENT == 'production'
+        run: echo "Deploying to Production"
