@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deployment
-        if: ${{ env.ENVIRONMENT == 'production' }}
+        if: ${{ env.ENVIRONMENT == 'production' && github.event_name == 'workflo_dispatch' }}
         run: echo "Deploying to Production"
